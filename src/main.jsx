@@ -1,7 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import testData from "./data/taladrod-cars.min.json";
+import mainData from "./data/taladrod-cars.json";
 
 import Navbar from "./pages/Navbar.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
@@ -21,8 +24,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { path: "/", element: <Dashboard /> },
-      { path: "/highlights", element: <Highlights /> },
+      { path: "/", element: <Dashboard data={mainData} /> },
+      { path: "/highlights", element: <Highlights data={testData} /> },
     ],
   },
 ]);
