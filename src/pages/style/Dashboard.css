@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column; /* Stack the components vertically */
+  align-items: center; /* Center components horizontally */
+  justify-content: center; /* Center components vertically */
+  width: 100%;
+}
+
+.container > div {
+  margin: 20px 0; /* Add margin between components */
+  width: 100%; /* Make each component take full width */
+}
+
+.item {
+  width: 100%; /* Ensure charts and table take up the full width */
+  max-width: 900px; /* Optional: Limit max width for better appearance */
+  box-sizing: border-box;
+}

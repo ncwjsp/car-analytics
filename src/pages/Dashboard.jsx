@@ -1,16 +1,16 @@
-import Table from "react-bootstrap/Table";
-import "./style/Dashboard.css";
 import { useEffect, useState } from "react";
+
+import PieChart from "./components/PieChart";
+import BarChart from "./components/BarChart";
+import CarTable from "./components/CarTable";
+
+import "./style/Dashboard.css";
 
 function Dashboard({ data }) {
   const cars = data.Cars;
 
-  const [currentBrand, setCurrentBrand] = useState([""]);
-
   let totalAllCars = 0;
   let totalCarsValue = 0;
-
-  useEffect(() => console.log(currentBrand));
 
   function findTotalCarAndValue(cars) {
     const carData = [];
@@ -72,60 +72,11 @@ function Dashboard({ data }) {
   console.log(JSON.stringify(carData, null, 2));
 
   return (
-    <>
-      <div className="table-container">
-        <Table striped bordered hover variant="dark" className="table-main">
-          <thead>
-            <tr>
-              <th>Car Brand</th>
-              <th>Total Cars</th>
-              <th>Total Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {carData.map((brand) => (
-              <tr
-                key={brand.brand}
-                onClick={() => setCurrentBrand(brand.brand)}
-              >
-                <td>{brand.brand}</td>
-                <td>{brand.totalCars}</td>
-                <td>{brand.totalValue.toLocaleString()}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-
-        {currentBrand && (
-          <Table
-            striped
-            bordered
-            hover
-            variant="dark"
-            className="table-secondary"
-          >
-            <thead>
-              <tr>
-                <th>Model</th>
-                <th>Total Cars</th>
-                <th>Total Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              {carData
-                .find((brand) => brand.brand === currentBrand)
-                ?.valByModel.map((model) => (
-                  <tr key={model.model}>
-                    <td>{model.model}</td>
-                    <td>{model.totalModel}</td>
-                    <td>{model.value.toLocaleString()}</td>
-                  </tr>
-                ))}
-            </tbody>
-          </Table>
-        )}
-      </div>
-    </>
+    <div className="container">
+      <CarTable data={carData} className="item" />
+      <PieChart data={carData} className="item" />
+      <BarChart data={carData} className="item" />
+    </div>
   );
 }
 

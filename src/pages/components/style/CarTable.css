@@ -1,0 +1,40 @@
+.table-main th,
+.table-main td {
+  text-align: center;
+  padding: 8px;
+}
+
+.table-main .column-brand {
+  width: 33%;
+}
+
+.table-main .column-total-cars {
+  width: 33%;
+}
+
+.table-main .column-total-value {
+  width: 33%;
+}
+
+.table-secondary th,
+.table-secondary td {
+  text-align: center;
+  padding: 8px;
+}
+
+.table-secondary .column-model {
+  width: 33%;
+}
+
+.table-secondary .column-total-cars {
+  width: 33%;
+}
+
+.table-secondary .column-total-value {
+  width: 33%;
+}
+
+th,
+td:hover {
+  cursor: pointer;
+}

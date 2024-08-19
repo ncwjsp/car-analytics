@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import testData from "./data/taladrod-cars.min.json";
 import mainData from "./data/taladrod-cars.json";
 
-import Navbar from "./pages/Navbar.jsx";
+import Navbar from "./pages/components/Navbar.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Highlights from "./pages/Highlights.jsx";
 
