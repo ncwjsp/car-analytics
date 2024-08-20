@@ -74,8 +74,10 @@ function Dashboard({ data }) {
   return (
     <div className="container">
       <CarTable data={carData} className="item" />
-      <PieChart data={carData} className="item" />
-      <BarChart data={carData} className="item" />
+      <div className="container-charts">
+        <PieChart data={carData} className="item" />
+        <BarChart data={carData} className="item" />
+      </div>
     </div>
   );
 }

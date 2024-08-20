@@ -2,6 +2,4 @@
   width: 100%; /* or a specific width */
   height: auto; /* Ensure height is properly set */
   margin: 0 auto; /* Center the chart */
-  clear: both; /* Clear any floats */
-  padding: 20px; /* Optional: add padding */
 }

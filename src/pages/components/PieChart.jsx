@@ -66,10 +66,26 @@ function PieChart({ data }) {
     ],
   };
 
+  const options = {
+    plugins: {
+      legend: {
+        position: "right", // Position the legend on the right
+        align: "top", // Align the legend items to the top of the legend box
+        labels: {
+          boxWidth: 12, // Width of the colored box
+        },
+      },
+    },
+    responsive: true,
+    maintainAspectRatio: false, // Adjust the aspect ratio to fit the container
+  };
+
   return (
-    <div className="pie-chart">
+    <div className="pie-chart-container">
       <h2>Car Brands Distribution</h2>
-      <Pie data={chartData} />
+      <div className="pie-chart-wrapper">
+        <Pie data={chartData} options={options} />
+      </div>
     </div>
   );
 }

@@ -1,4 +1,15 @@
-.pie-chart {
-  width: 500px; /* Adjust as needed */
-  height: 500px; /* Ensure you set both width and height */
+.pie-chart-container {
+  width: 100%; /* Make the container take full width */
+}
+.pie-chart-wrapper {
+  max-width: 70%; /* Limit the maximum width of the chart */
+}
+
+.pie-chart-wrapper canvas {
+  width: 100% !important; /* Ensure the canvas takes the full width of its container */
+  height: auto !important; /* Adjust the height automatically to maintain aspect ratio */
+}
+
+h2 {
+  text-align: center;
 }
