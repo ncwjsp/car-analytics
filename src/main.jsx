@@ -9,12 +9,14 @@ import mainData from "./data/taladrod-cars.json";
 import Navbar from "./pages/components/Navbar.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Highlights from "./pages/Highlights.jsx";
+import Footer from "./pages/components/Footer.jsx";
 
 function Layout() {
   return (
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 }

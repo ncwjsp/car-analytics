@@ -1,15 +1,16 @@
 .pie-chart-container {
-  width: 100%; /* Make the container take full width */
+  max-width: 100%;
 }
 .pie-chart-wrapper {
-  max-width: 70%; /* Limit the maximum width of the chart */
+  max-width: 100%;
 }
 
 .pie-chart-wrapper canvas {
-  width: 100% !important; /* Ensure the canvas takes the full width of its container */
-  height: auto !important; /* Adjust the height automatically to maintain aspect ratio */
+  width: 100% !important;
+  height: auto !important;
 }
 
-h2 {
-  text-align: center;
+.pie-chart-container {
+  width: 100%;
+  padding-left: 0px;
 }

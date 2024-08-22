@@ -1,35 +1,29 @@
+.table-main {
+  display: table;
+  width: 100%;
+  overflow: auto;
+}
+
+.table-secondary {
+  display: table;
+  width: 100%;
+  overflow: auto;
+}
+
 .table-main th,
-.table-main td {
-  text-align: center;
-  padding: 8px;
-}
-
-.table-main .column-brand {
-  width: 33%;
-}
-
-.table-main .column-total-cars {
-  width: 33%;
-}
-
-.table-main .column-total-value {
-  width: 33%;
-}
-
+.table-main td,
 .table-secondary th,
 .table-secondary td {
+  font-size: 15px;
   text-align: center;
-  padding: 8px;
+  padding: 6px;
 }
 
-.table-secondary .column-model {
-  width: 33%;
-}
-
-.table-secondary .column-total-cars {
-  width: 33%;
-}
-
+.table-main .column-brand,
+.table-main .column-total-cars,
+.table-main .column-total-value,
+.table-secondary .column-model,
+.table-secondary .column-total-cars,
 .table-secondary .column-total-value {
   width: 33%;
 }
@@ -39,3 +33,20 @@ td:hover {
   cursor: pointer;
 }
 
+.selected-row {
+  background-color: #333; /* Adjust color for highlight */
+  color: #fff; /* Adjust text color if needed */
+}
+
+.table-container {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    flex-direction: column; /* Switch to column direction on smaller screens */
+  }
+}

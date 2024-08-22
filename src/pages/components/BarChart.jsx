@@ -81,12 +81,8 @@ function BarChart({ data }) {
       },
       tooltip: {
         callbacks: {
-          title: (tooltipItems) => {
-            // Display the brand name
-            return tooltipItems[0].label;
-          },
+          title: (tooltipItems) => tooltipItems[0].label,
           label: (tooltipItem) => {
-            // Display all models for the hovered brand
             const dataset = chartData.datasets[tooltipItem.datasetIndex];
             const brandIndex = tooltipItem.dataIndex;
             const models = dataset.data
@@ -104,6 +100,9 @@ function BarChart({ data }) {
     scales: {
       x: {
         stacked: true,
+        ticks: {
+          autoSkip: true, // Skip some ticks to avoid clutter
+        },
       },
       y: {
         stacked: true,

@@ -1,0 +1,21 @@
+.footer {
+  width: 100%;
+  background-color: #303030;
+}
+
+.footer .container {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+.footer .text-center {
+  padding: 15px 0;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+.footer p {
+  margin: 0;
+}

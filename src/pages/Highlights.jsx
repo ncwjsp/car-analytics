@@ -1,6 +1,7 @@
 import CarCard from "./components/CarCard";
+import { Button } from "react-bootstrap";
 import HighlightedCar from "./components/HighlightedCar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "./style/Highlights.css";
 
@@ -34,7 +35,6 @@ function Highlights({ data }) {
     );
     setSelectedCars(updatedSelectedCars);
 
-    // Add the removed car back to the correct position in remainingCars
     const updatedRemainingCars = [...remainingCars, car].sort((a, b) => {
       return (
         carData.findIndex((originalCar) => originalCar.Cid === a.Cid) -
@@ -54,11 +54,22 @@ function Highlights({ data }) {
 
   return (
     <div className="highlights-container">
-      <button onClick={handleClearHighlightedCars}>
-        Clear Highlighted Cars
-      </button>
-      <HighlightedCar data={selectedCars} onRemoveCar={handleRemoveCar} />
-      <CarCard data={remainingCars} onSelectCar={handleSelectCar} />
+      {selectedCars.length > 0 && (
+        <Button onClick={handleClearHighlightedCars} variant="danger">
+          Clear
+        </Button>
+      )}
+      <HighlightedCar
+        data={selectedCars}
+        onRemoveCar={handleRemoveCar}
+        className="highlighted-car"
+      />
+      <h2>Car List</h2>
+      <CarCard
+        data={remainingCars}
+        onSelectCar={handleSelectCar}
+        className="car-card"
+      />
     </div>
   );
 }

@@ -1,18 +1,46 @@
 .container {
   display: flex;
-  flex-direction: column; /* Stack the components vertically */
-  align-items: center; /* Center components horizontally */
-  justify-content: center; /* Center components vertically */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .container > div {
-  margin: 20px 0; /* Add margin between components */
-  width: 100%; /* Make each component take full width */
+  margin: 10px 0;
+  width: 100%;
 }
 
 .item {
-  width: 100%; /* Ensure charts and table take up the full width */
-  max-width: 900px; /* Optional: Limit max width for better appearance */
+  width: 100%;
+  max-width: 900px;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.container-charts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-charts .item {
+  width: 100%;
+  max-width: 900px;
+}
+
+@media (max-width: 768px) {
+  .container-charts {
+    flex-direction: column;
+  }
+}
+
+.container-details h2 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 23px;
 }

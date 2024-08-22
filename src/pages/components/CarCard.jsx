@@ -2,6 +2,8 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
+import "./style/CarCard.css";
+
 function CarCard({ data, onSelectCar }) {
   const handleCardClick = (car) => {
     onSelectCar(car);
@@ -11,12 +13,12 @@ function CarCard({ data, onSelectCar }) {
     <div>
       <Row xs={2} md={6} className="g-4">
         {data.map((car) => (
-          <Col key={car.Cid}>
-            <Card onClick={() => handleCardClick(car)}>
+          <Col key={car.Cid} className="d-flex align-items-stretch">
+            <Card onClick={() => handleCardClick(car)} className="card">
               <Card.Img src={car.Img300} />
-              <Card.Body>
+              <Card.Body className="card-body">
                 <Card.Title>{car.NameMMT}</Card.Title>
-                <Card.Text style={{ textAlign: "right" }}>{car.Prc}</Card.Text>
+                <Card.Text className="card-body-text">{car.Prc}</Card.Text>
               </Card.Body>
             </Card>
           </Col>

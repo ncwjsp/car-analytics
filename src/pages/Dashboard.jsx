@@ -73,10 +73,14 @@ function Dashboard({ data }) {
 
   return (
     <div className="container">
-      <CarTable data={carData} className="item" />
+      <div className="container-details">
+        <h2>Total Cars: {totalAllCars.toLocaleString()}</h2>
+        <h2>Total Value: {totalCarsValue.toLocaleString()}</h2>
+      </div>
+      <CarTable data={carData} className="container item" />
       <div className="container-charts">
-        <PieChart data={carData} className="item" />
-        <BarChart data={carData} className="item" />
+        <PieChart data={carData} className="container item chart" />
+        <BarChart data={carData} className="container item chart" />
       </div>
     </div>
   );
